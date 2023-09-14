@@ -11,7 +11,7 @@ const ChefCard = ({ chefData }) => {
         <p className="text-gray-600">Experience: {experience} years</p>
         <p className="text-gray-600">Recipes: {recipeCount}</p>
         <p className="text-gray-600">Likes: {likes}</p>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2">
+        <button className="bg-[#5F8D0A] hover:bg-[#3a8d0a] text-white font-bold py-2 px-4 rounded mt-2">
           View Recipes
         </button>
       </div>
