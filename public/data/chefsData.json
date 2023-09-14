@@ -1,0 +1,50 @@
+[
+    {
+      "name": "Ahmed Hossain",
+      "experience": 10,
+      "recipeCount": 50,
+      "likes": 500,
+      "image": "https://i.ibb.co/TWDZNJT/chef-1.jpg",
+      "bio":"With over two decades of culinary expertise, Chef Ahmed Hossain is a distinguished figure in Bangladeshi gastronomy. Known for his signature 'Bhapa Ilish', a steamed hilsa fish masterpiece, he seamlessly combines tradition with innovation. An advocate for sustainability, Chef Ahmed is committed to showcasing Bangladesh's culinary heritage to the world."
+    },
+    {
+      "name": "Fakruddin Hossain",
+      "experience": 8,
+      "recipeCount": 40,
+      "likes": 400,
+      "image": "https://i.ibb.co/1Gvd2xB/chef-2.jpg",
+      "bio":"With over two decades of culinary expertise, Chef Fakruddin Hossain is a distinguished figure in Bangladeshi gastronomy. Known for his signature 'Bhapa Ilish', a steamed hilsa fish masterpiece, he seamlessly combines tradition with innovation. An advocate for sustainability, Chef Ahmed is committed to showcasing Bangladesh's culinary heritage to the world."
+    },
+    {
+      "name": "Sanjida Khatun",
+      "experience": 15,
+      "recipeCount": 75,
+      "likes": 750,
+      "image": "https://i.ibb.co/9WKSfxg/chef-3.jpg",
+      "bio":"With over two decades of culinary expertise, Chef Sanjida Khatun is a distinguished figure in Bangladeshi gastronomy. Known for her signature 'Bhapa Ilish', a steamed hilsa fish masterpiece, he seamlessly combines tradition with innovation. An advocate for sustainability, Chef Khatun is committed to showcasing Bangladesh's culinary heritage to the world."
+    },
+    {
+      "name": "Kabir Ahmed",
+      "experience": 5,
+      "recipeCount": 30,
+      "likes": 300,
+      "image": "https://i.ibb.co/zFBssDt/chef-4.jpg",
+      "bio":"With over two decades of culinary expertise, Chef Kabir Ahmed is a distinguished figure in Bangladeshi gastronomy. Known for his signature 'Bhapa Ilish', a steamed hilsa fish masterpiece, he seamlessly combines tradition with innovation. An advocate for sustainability, Chef Ahmed is committed to showcasing Bangladesh's culinary heritage to the world."
+    },
+    {
+      "name": "Manik Miah",
+      "experience": 12,
+      "recipeCount": 60,
+      "likes": 600,
+      "image": "https://i.ibb.co/HFZjB2L/chef-5.jpg",
+      "bio":"With over two decades of culinary expertise, Chef Manik Miah is a distinguished figure in Bangladeshi gastronomy. Known for his signature 'Bhapa Ilish', a steamed hilsa fish masterpiece, he seamlessly combines tradition with innovation. An advocate for sustainability, Chef Miah is committed to showcasing Bangladesh's culinary heritage to the world."
+    },
+    {
+      "name": "Feroze Khan",
+      "experience": 7,
+      "recipeCount": 35,
+      "likes": 350,
+      "image": "https://i.ibb.co/8rKKG9f/chef-6.jpg",
+      "bio":"With over two decades of culinary expertise, Chef Feroz Khan is a distinguished figure in Bangladeshi gastronomy. Known for his signature 'Bhapa Ilish', a steamed hilsa fish masterpiece, he seamlessly combines tradition with innovation. An advocate for sustainability, Chef Khan is committed to showcasing Bangladesh's culinary heritage to the world."
+    }
+  ]
