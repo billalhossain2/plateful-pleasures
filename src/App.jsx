@@ -5,16 +5,15 @@ import Reviews from "./components/Reviews/Reviews";
 import Footer from "./components/shared/Footer";
 import SliderBanner from "./components/carousel/Carousel";
 import Navbar from "./components/shared/Navbar";
+import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
+import LoginForm from "./components/LoginForm/LoginForm";
+import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
+import Home from "./components/pages/Home";
+
 const App = () => {
   return (
-    <div className="max-w-[90%] mx-auto">
-      {/* <Header></Header> */}
-      <Navbar></Navbar>
-      <SliderBanner></SliderBanner>
-      <Chefs></Chefs>
-      <FeaturedRecipes></FeaturedRecipes>
-      <Reviews></Reviews>
-      <Footer></Footer>
+    <div>
+      <Home></Home>
     </div>
   );
 };

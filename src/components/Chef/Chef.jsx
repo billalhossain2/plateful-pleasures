@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chefData }) => {
   const { name, experience, recipeCount, likes, image } = chefData;
@@ -8,12 +9,14 @@ const ChefCard = ({ chefData }) => {
       <img src={image} alt={name} className="h-[300px] w-full object-cover" />
       <div className="p-4">
         <h2 className="text-xl font-semibold">{name}</h2>
-        <p className="text-gray-600">Experience: {experience} years</p>
+        <p className="text-gray-600">Experience: {experience}</p>
         <p className="text-gray-600">Recipes: {recipeCount}</p>
         <p className="text-gray-600">Likes: {likes}</p>
+        <Link to="/chef-recipes">
         <button className="bg-[#5F8D0A] hover:bg-[#3a8d0a] text-white font-bold py-2 px-4 rounded mt-2">
           View Recipes
         </button>
+        </Link>
       </div>
     </div>
   );
