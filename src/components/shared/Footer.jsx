@@ -34,7 +34,10 @@ const Footer = () => {
             Feel free to contact us if you have any questions or suggestions.
           </p>
           <p className="mt-4">
-            Email: <a href="mailto:info@example.com" className="text-gray-400 hover:text-white transition duration-300">info@example.com</a>
+            Email: <a href="mailto:info@example.com" className="text-gray-400 hover:text-white transition duration-300">siam.ahmed76@gmail.com</a>
+          </p>
+          <p className="mt-4">
+            <span>Phone:</span> <span className="text-gray-400 hover:text-white transition duration-300">01311123533</span>
           </p>
         </div>
         <div className="w-full md:w-1/3">
@@ -42,7 +45,22 @@ const Footer = () => {
           <p className="mt-4">
             Subscribe to our newsletter for updates on new recipes and more.
           </p>
-          {/* Add your newsletter signup form here */}
+          <form className='mt-3'>
+          <div className="flex lg:flex-row md:flex-row flex-col">
+            <input
+              type="email"
+              placeholder="Your email"
+              className="px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:border-blue-300 text-black"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-[#5F8D0A] hover:bg-[#298d0a] text-white font-semibold py-2 px-4 rounded-r-md transition duration-300"
+            >
+              Subscribe
+            </button>
+          </div>
+        </form>
         </div>
       </div>
       <div className="border-t border-gray-700 mt-8 pt-4 text-center">

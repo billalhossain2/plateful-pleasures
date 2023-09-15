@@ -8,7 +8,7 @@ const FeaturedRecipes = () => {
         .then(data => setFeaturedRecipes(data))
     }, [])
   return (
-    <div className='my-16 max-w-[90%] mx-auto'>
+    <div className='my-16'>
         <h1 className="text-3xl font-bold text-center mb-10">Featured Recipes</h1>
        <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
        {featuredRecipes.map((recipe, index) => (
