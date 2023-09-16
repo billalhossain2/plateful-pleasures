@@ -7,6 +7,7 @@ import LoginForm from "../components/LoginForm/LoginForm";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
 import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import ChefRecipes from "../components/pages/ChefRecipes";
+import TermsAndConditions from "../components/pages/TermsAndConditions";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     {
         path:"/chef-recipes",
         element:<ChefRecipes></ChefRecipes>
+    },
+    {
+        path:"/terms-and-conditions",
+        element:<TermsAndConditions></TermsAndConditions>
     },
     {
         path:"*",

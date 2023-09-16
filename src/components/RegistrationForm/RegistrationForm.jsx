@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../shared/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -145,7 +145,7 @@ function RegistrationForm() {
                 onChange={handleChange}
                 className="mr-2"
               />
-              I agree to the <a href="/terms-and-conditions">Terms and Conditions</a>
+              I agree to the <NavLink to="/terms-and-conditions">Terms and Conditions</NavLink>
             </label>
           </div>
           <div>
