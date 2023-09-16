@@ -1,8 +1,10 @@
 import React from "react";
 import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
+import useTitle from "../Hooks/useTitle";
 
 const User = () => {
+    useTitle("User")
   // Sample user data
   const user = {
     name: "John Doe",

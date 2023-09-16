@@ -44,8 +44,8 @@ const SliderBanner = () => {
               <h2 className="text-3xl font-bold text-white mb-2">{recipe.title}</h2>
               <p className="text-white mb-4">{recipe.description}</p>
               <a
-                href={recipe.recipeUrl}
-                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-full text-lg font-semibold transition duration-300"
+                href=""
+                className="bg-[#5F8D0A] hover:bg-[#5F8D0A] text-white py-2 px-4 rounded-full text-lg font-semibold transition duration-300"
               >
                 {recipe.buttonText}
               </a>

@@ -1,0 +1,37 @@
+[
+    {
+      "recipe_name": "Biriyani",
+      "ingredients": ["Rice", "Chicken", "Spices", "Onion", "Tomato"],
+      "cooking_method": "Cook rice with spices, then layer with chicken and cook.",
+      "rating": 4.7,
+      "image":"https://i.ibb.co/gTN5CDc/biriany.jpg"
+    },
+    {
+      "recipe_name": "Hilsha Fish Curry",
+      "ingredients": ["Hilsha fish", "Mustard", "Spices", "Coconut", "Turmeric"],
+      "cooking_method": "Marinate fish with mustard and spices, then cook in gravy.",
+      "rating": 4.5,
+      "image":"https://i.ibb.co/DpHyHLr/hilsha-fish-curry.jpg"
+    },
+    {
+      "recipe_name": "Chingri Malai Curry",
+      "ingredients": ["Prawns", "Coconut milk", "Spices", "Ginger", "Garlic"],
+      "cooking_method": "Cook prawns in coconut milk with spices.",
+      "rating": 4.6,
+      "image":"https://i.ibb.co/2nx9H0Z/Chingri-Malai-Curry.jpg"
+    },
+    {
+      "recipe_name": "Fuska",
+      "ingredients": ["Semolina balls", "Tamarind water", "Chickpeas", "Potatoes", "Chili"],
+      "cooking_method": "Fill semolina balls with chickpeas and serve with tamarind water.",
+      "rating": 4.8,
+      "image":"https://i.ibb.co/FmsVycg/Fuska.jpg"
+    },
+    {
+      "recipe_name": "Pitha",
+      "ingredients": ["Rice flour", "Coconut", "Jaggery", "Cardamom", "Sesame seeds"],
+      "cooking_method": "Prepare rice cakes filled with coconut and jaggery.",
+      "rating": 4.9,
+      "image":"https://i.ibb.co/wLPry8s/Pitha.jpg"
+    }
+  ]
