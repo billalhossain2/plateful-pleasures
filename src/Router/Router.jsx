@@ -8,6 +8,7 @@ import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
 import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import ChefRecipes from "../components/pages/ChefRecipes";
 import TermsAndConditions from "../components/pages/TermsAndConditions";
+import User from "../components/pages/User";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     {
         path:"/terms-and-conditions",
         element:<TermsAndConditions></TermsAndConditions>
+    },
+    {
+        path:"/user",
+        element:<User></User>
     },
     {
         path:"*",

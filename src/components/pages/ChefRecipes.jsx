@@ -3,9 +3,12 @@
 import React from 'react';
 import ChefRecipeCard from '../ChefRecipeCard/ChefRecipeCard';
 import Navbar from '../shared/Navbar';
+import useTitle from '../Hooks/useTitle';
+import Footer from '../shared/Footer';
 
 
 function ChefRecipes() {
+  useTitle("Chef Recipies")
   const chef = {
       "id": 1,
       "name": "Ahmed Hossain",
@@ -92,6 +95,7 @@ function ChefRecipes() {
       }
       </div>
     </div>
+    <Footer></Footer>
     </>
   );
 }

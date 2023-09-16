@@ -1,7 +1,13 @@
 import React from 'react';
+import useTitle from '../Hooks/useTitle';
+import Navbar from '../shared/Navbar';
+import Footer from '../shared/Footer';
 
 const TermsAndConditions = () => {
+  useTitle("Terms And Conditions")
   return (
+    <>
+    <Navbar></Navbar>
     <div className="bg-gray-100 min-h-screen p-6">
       <div className="container mx-auto py-12">
         <h1 className="text-3xl font-semibold mb-6">Terms and Conditions</h1>
@@ -37,6 +43,8 @@ const TermsAndConditions = () => {
         </div>
       </div>
     </div>
+    <Footer></Footer>
+    </>
   );
 };
 

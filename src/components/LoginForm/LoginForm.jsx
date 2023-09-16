@@ -1,8 +1,11 @@
 import React from 'react';
 import Navbar from '../shared/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import useTitle from '../Hooks/useTitle';
+import Footer from '../shared/Footer';
 
 function LoginForm() {
+  useTitle('Login')
   const handleFacebookLogin = () => {
     // Implement Facebook login logic using the Facebook SDK or API.
     // You should handle user authentication and authorization here.
@@ -50,7 +53,7 @@ function LoginForm() {
             >
               Login
             </button>
-            <p>Are you new to this site? <Link to="/register">Register</Link></p>
+            <p>Are you new to this site? <NavLink to="/register">Register</NavLink></p>
             <div className="flex flex-col space-y-3 mt-10">
               {/* Facebook Login Button */}
               <button
@@ -71,6 +74,7 @@ function LoginForm() {
         </form>
       </div>
     </div>
+    <Footer></Footer>
     </>
   );
 }

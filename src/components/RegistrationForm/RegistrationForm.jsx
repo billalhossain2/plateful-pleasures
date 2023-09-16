@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from '../shared/Navbar';
 import { Link, NavLink } from 'react-router-dom';
+import useTitle from '../Hooks/useTitle';
+import Footer from '../shared/Footer';
 
 function RegistrationForm() {
+  useTitle('Registration')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -160,6 +163,7 @@ function RegistrationForm() {
         </form>
       </div>
     </div>
+    <Footer></Footer>
     </>
   );
 }
