@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types';
 const ChefCard = ({ chefData }) => {
-  const { name, experience, recipeCount, likes, image } = chefData;
+  const {id, name, experience, recipeCount, likes, image } = chefData;
 
   return (
     <div className="rounded-xl shadow-md overflow-hidden border-[1px] border-solid border-[#d8d3d3]">
@@ -13,7 +13,7 @@ const ChefCard = ({ chefData }) => {
         <p className="text-gray-600">Experience: {experience}</p>
         <p className="text-gray-600">Recipes: {recipeCount}</p>
         <p className="text-gray-600">Likes: {likes}</p>
-        <Link to="/chef-recipes">
+        <Link to={`/chef-recipes/${id}`}>
         <button className="bg-[#5F8D0A] hover:bg-[#3a8d0a] text-white font-bold py-2 px-4 rounded mt-2">
           View Recipes
         </button>

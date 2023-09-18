@@ -36,6 +36,11 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink className="hover:text-[#5F8D0A] hover:text-bold" to="/favourites">
+            Favourites
+          </NavLink>
+        </li>
+        <li>
           <NavLink className="hover:text-[#5F8D0A] hover:text-bold" to="/login">
             Login
           </NavLink>

@@ -11,6 +11,7 @@ import TermsAndConditions from "../components/pages/TermsAndConditions";
 import User from "../components/pages/User";
 import Blogs from "../components/pages/Blogs";
 import AboutUs from "../components/pages/AboutUs";
+import FavouriteRecipes from "../components/pages/FavouriteRecipes";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         element:<RegistrationForm></RegistrationForm>
     },
     {
-        path:"/chef-recipes",
+        path:"/chef-recipes/:id",
         element:<ChefRecipes></ChefRecipes>
     },
     {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
     {
         path:"/about-us",
         element:<AboutUs></AboutUs>
+    },
+    {
+        path:"/favourites",
+        element:<FavouriteRecipes></FavouriteRecipes>
     },
     {
         path:"*",

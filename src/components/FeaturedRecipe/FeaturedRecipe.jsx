@@ -1,9 +1,9 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types';
+
 const FeaturedRecipe = ({ recipe }) => {
   const { title, description, image, chef, likes } = recipe;
-
   return (
     <div className="rounded overflow-hidden shadow-lg">
       <LazyLoadImage src={image} alt={title} className="w-full h-[60%]" />

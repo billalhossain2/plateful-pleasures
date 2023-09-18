@@ -3,7 +3,7 @@ import ChefCard from "../Chef/Chef";
 import useFetch from "../Hooks/useFetch";
 
 function Chefs() {
-  const chefsData = useFetch("data/chefsData.json");
+  const chefsData = useFetch("https://plateful-pleasures-server.vercel.app/chefs-data");
   
   return (
     <div>
