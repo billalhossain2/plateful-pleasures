@@ -19,8 +19,8 @@ function LoginForm() {
   return (
     <>
     <Navbar></Navbar>
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded shadow-md w-96">
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="p-8 rounded shadow-md w-96 border-[1px] border-solid border-gray-300">
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         <form className="space-y-4">
           <div>

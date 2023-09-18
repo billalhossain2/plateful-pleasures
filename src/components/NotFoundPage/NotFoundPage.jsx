@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function NotFoundPage() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div className="min-h-screen flex flex-col items-center justify-center">
       {/* Image */}
       <img
         src="https://i.ibb.co/pK6kNCJ/not-found-page.png"  // Replace with the actual path to your image

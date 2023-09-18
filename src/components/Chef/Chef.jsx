@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import PropTypes from 'prop-types';
 const ChefCard = ({ chefData }) => {
   const { name, experience, recipeCount, likes, image } = chefData;
 
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden border-[1px] border-solid border-[#d8d3d3]">
+    <div className="rounded-xl shadow-md overflow-hidden border-[1px] border-solid border-[#d8d3d3]">
       <LazyLoadImage src={image} alt={name} className="h-[300px] w-full object-cover" />
       <div className="p-4">
         <h2 className="text-xl font-semibold">{name}</h2>
@@ -21,5 +22,9 @@ const ChefCard = ({ chefData }) => {
     </div>
   );
 };
+
+ChefCard.propTypes = {
+  chefData:PropTypes.object.isRequired
+}
 
 export default ChefCard;

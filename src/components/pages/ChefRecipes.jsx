@@ -6,18 +6,14 @@ import Navbar from '../shared/Navbar';
 import useTitle from '../Hooks/useTitle';
 import Footer from '../shared/Footer';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import useFetch from '../Hooks/useFetch';
 
 
 function ChefRecipes() {
-  useTitle("Chef Recipies")
-  const [chefRecipesData, setChefRecipesData] = useState([])
   
-  useEffect(()=>{
-    fetch(`data/chef-recipes.json`)
-    .then(res => res.json())
-    .then(data => setChefRecipesData(data))
-    .catch(error => console.log('Something went wrong : ', error))
-  }, [])
+  useTitle("Chef Recipies")
+ const chefRecipesData = useFetch("data/chef-recipes.json")
+
   const chef = {
       "id": 1,
       "name": "Ahmed Hossain",
@@ -32,7 +28,7 @@ function ChefRecipes() {
     <>
     <Navbar></Navbar>
     <div className="container mx-auto p-4">
-      <div className="bg-gray-200 p-4 rounded-lg">
+      <div className="p-4 rounded-lg">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/3">
             <LazyLoadImage

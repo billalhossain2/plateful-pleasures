@@ -9,6 +9,8 @@ import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import ChefRecipes from "../components/pages/ChefRecipes";
 import TermsAndConditions from "../components/pages/TermsAndConditions";
 import User from "../components/pages/User";
+import Blogs from "../components/pages/Blogs";
+import AboutUs from "../components/pages/AboutUs";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
     {
         path:"/user",
         element:<User></User>
+    },
+    {
+        path:"/blogs",
+        element:<Blogs></Blogs>
+    },
+    {
+        path:"/about-us",
+        element:<AboutUs></AboutUs>
     },
     {
         path:"*",

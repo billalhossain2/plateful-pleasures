@@ -1,9 +1,9 @@
 import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-
+import PropTypes from 'prop-types';
 const ChefRecipeCard = ({recipe}) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 m-2">
+    <div className="rounded-lg shadow-md p-4 m-2">
     <LazyLoadImage
       src={recipe.image}
       alt={recipe.recipe_name}
@@ -24,6 +24,10 @@ const ChefRecipeCard = ({recipe}) => {
     </button>
   </div>
   )
+}
+
+ChefRecipeCard.propTypes = {
+  recipe:PropTypes.object.isRequired
 }
 
 export default ChefRecipeCard

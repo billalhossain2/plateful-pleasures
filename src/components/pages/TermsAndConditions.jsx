@@ -8,11 +8,11 @@ const TermsAndConditions = () => {
   return (
     <>
     <Navbar></Navbar>
-    <div className="bg-gray-100 min-h-screen p-6">
+    <div className="min-h-screen p-6">
       <div className="container mx-auto py-12">
         <h1 className="text-3xl font-semibold mb-6">Terms and Conditions</h1>
 
-        <div className="bg-white rounded-lg shadow-md p-8">
+        <div className="rounded-lg shadow-md p-8">
           <h2 className="text-xl font-semibold mb-4">1. Introduction</h2>
           <p>
             Welcome to Foodie Delights! These terms and conditions outline the
