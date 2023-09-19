@@ -12,6 +12,7 @@ import User from "../components/pages/User";
 import Blogs from "../components/pages/Blogs";
 import AboutUs from "../components/pages/AboutUs";
 import FavouriteRecipes from "../components/pages/FavouriteRecipes";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
     },
     {
         path:"/chef-recipes/:id",
-        element:<ChefRecipes></ChefRecipes>
+        element:<PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>
     },
     {
         path:"/terms-and-conditions",
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
     },
     {
         path:"/favourites",
-        element:<FavouriteRecipes></FavouriteRecipes>
+        element:<PrivateRoute><FavouriteRecipes></FavouriteRecipes></PrivateRoute>
     },
     {
         path:"*",

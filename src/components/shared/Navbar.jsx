@@ -1,8 +1,22 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { themeContext } from "../../themeContext/ThemeContext";
+import { userContext } from "../../Contexts/UserContext";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const Navbar = () => {
+  const {user, signOutUser} = useContext(userContext)
+
+  const handleLogoutUser = ()=>{
+    signOutUser()
+    .then(()=>toast("Successfully logged out!", {autoClose:2000}))
+    .catch((error)=>console.log("Logout error", error.message))
+  }
+  
   const {isDarkMode, setIsDarkMode} = useContext(themeContext)
     if(isDarkMode){
       document.querySelector('html').setAttribute("data-theme", "dark")
@@ -41,11 +55,14 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className="hover:text-[#5F8D0A] hover:text-bold" to="/login">
+          {
+            user ? <button onClick={handleLogoutUser}>Logout</button> : <NavLink className="hover:text-[#5F8D0A] hover:text-bold" to="/login">
             Login
           </NavLink>
+          }
         </li>
-        <li>
+        {
+          !user && <li>
           <NavLink
             className="hover:text-[#5F8D0A] hover:text-bold"
             to="/register"
@@ -53,6 +70,7 @@ const Navbar = () => {
             Register
           </NavLink>
         </li>
+        }
         <li>
           <DarkModeToggle
             onChange={setIsDarkMode}
@@ -61,6 +79,7 @@ const Navbar = () => {
           />
         </li>
       </ul>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
