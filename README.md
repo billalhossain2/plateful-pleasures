@@ -21,7 +21,7 @@ Welcome to the Food Recipes Website! This is a web application that allows users
 ## Getting Started
 To get started with the Food Recipes Website, follow these steps:
 1. Clone the repository to your local machine:
-git clone https://github.com/billal-webdev/food-recipes-website.git
+git clone https://github.com/billal-webdev/plateful-pleasures.git
 
 2. Navigate to the project directory:
 cd food-recipes-website
