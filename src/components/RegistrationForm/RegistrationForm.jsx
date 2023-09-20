@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Navbar from '../shared/Navbar';
 import { Link, NavLink } from 'react-router-dom';
 import useTitle from '../Hooks/useTitle';
 import Footer from '../shared/Footer';
+import { userContext } from '../../Contexts/UserContext';
 
 function RegistrationForm() {
   useTitle('Registration')
+  const {registerWithEmailPassword} = useContext(userContext)
+  const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
-    photoUrl: null,
+    photoUrl: '',
     agreeToTerms: false, // Added agreeToTerms field
   });
 
@@ -23,20 +27,31 @@ function RegistrationForm() {
     });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({
-      ...formData,
-      photoUrl: e.target.files[0], // Use the first selected file
-    });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError("")
+    setSuccess("")
 
     // Validate password match
     if (formData.password !== formData.confirmPassword) {
       alert('Passwords do not match');
       return;
+    }
+
+    //password: 1234aI#
+
+    //Validate password with regular expression
+    if(!(/[a-z]/).test(formData.password)){
+      return setError('Your password should contain atleast one lower case letter.')
+    }else if(!(/[A-Z]/).test(formData.password)){
+      return setError('Your password should contain atleast one upper case letter.')
+    }else if(!(/[0-9]/).test(formData.password)){
+      return setError('Your password should contain atleast one number.')
+    }else if(!(/[!@#$%^&*]/).test(formData.password)){
+      return setError('Your password should contain atleast one special character.')
+    }else if(formData.password.length < 6){
+      return setError('Your password must be at least 6 characters longer.')
     }
 
     // Check if the user has agreed to terms and conditions
@@ -45,9 +60,10 @@ function RegistrationForm() {
       return;
     }
 
-    // Send the formData to your server for processing
-    // You can use fetch or axios to make a POST request here
-    // Example: fetch('/api/register', { method: 'POST', body: formData })
+    //Create a new account with firebase
+    registerWithEmailPassword(formData.email, formData.password)
+    .then(()=>setSuccess("Successfully created a new user"))
+    .catch((error)=>setError("Failed to create a new user: ", error.message))
 
     // Reset the form after submission
     setFormData({
@@ -55,7 +71,7 @@ function RegistrationForm() {
       email: '',
       password: '',
       confirmPassword: '',
-      photoUrl: null,
+      photoUrl: '',
       agreeToTerms: false,
     });
   };
@@ -131,10 +147,11 @@ function RegistrationForm() {
               Photo URL:
             </label>
             <input
-              type="file"
+              type="text"
               id="photoUrl"
               name="photoUrl"
-              onChange={handleFileChange}
+              onChange={handleChange}
+              value={formData.photoUrl}
               className="w-full border border-gray-300 rounded px-3 py-2"
               required
             />
@@ -159,6 +176,8 @@ function RegistrationForm() {
               Register
             </button>
           </div>
+          <p className='font-bold text-center text-red-500'>{error}</p>
+          <p className='font-bold text-center text-green-500'>{success}</p>
           <p>Do you have an account? <Link to="/login">Login</Link></p>
         </form>
       </div>

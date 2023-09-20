@@ -4,25 +4,24 @@ import DarkModeToggle from "react-dark-mode-toggle";
 import { themeContext } from "../../themeContext/ThemeContext";
 import { userContext } from "../../Contexts/UserContext";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
-  const {user, signOutUser} = useContext(userContext)
+  const { user, signOutUser } = useContext(userContext);
 
-  const handleLogoutUser = ()=>{
+  const handleLogoutUser = () => {
     signOutUser()
-    .then(()=>toast("Successfully logged out!", {autoClose:2000}))
-    .catch((error)=>console.log("Logout error", error.message))
+      .then(() => toast("Successfully logged out!", { autoClose: 2000 }))
+      .catch((error) => console.log("Logout error", error.message));
+  };
+
+  const { isDarkMode, setIsDarkMode } = useContext(themeContext);
+  if (isDarkMode) {
+    document.querySelector("html").setAttribute("data-theme", "dark");
+  } else {
+    document.querySelector("html").setAttribute("data-theme", "ligth");
   }
-  
-  const {isDarkMode, setIsDarkMode} = useContext(themeContext)
-    if(isDarkMode){
-      document.querySelector('html').setAttribute("data-theme", "dark")
-    }else{
-      document.querySelector('html').setAttribute("data-theme", "ligth")
-    }
   return (
     <div className="flex lg:flex-row md:flex-row flex-col justify-between items-center mt-10">
       <h3 className="font-bold lg:text-3xl md:text-3xl text-2xl text-[#5F8D0A]">
@@ -40,37 +39,53 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className="hover:text-[#5F8D0A] hover:text-bold" to="/user">
-            User
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="hover:text-[#5F8D0A] hover:text-bold" to="/about-us">
+          <NavLink
+            className="hover:text-[#5F8D0A] hover:text-bold"
+            to="/about-us"
+          >
             About Us
           </NavLink>
         </li>
         <li>
-          <NavLink className="hover:text-[#5F8D0A] hover:text-bold" to="/favourites">
+          <NavLink
+            className="hover:text-[#5F8D0A] hover:text-bold"
+            to="/favourites"
+          >
             Favourites
           </NavLink>
         </li>
         <li>
-          {
-            user ? <button onClick={handleLogoutUser}>Logout</button> : <NavLink className="hover:text-[#5F8D0A] hover:text-bold" to="/login">
-            Login
-          </NavLink>
-          }
+          {user ? (
+            <button onClick={handleLogoutUser}>Logout</button>
+          ) : (
+            <NavLink
+              className="hover:text-[#5F8D0A] hover:text-bold"
+              to="/login"
+            >
+              Login
+            </NavLink>
+          )}
         </li>
-        {
-          !user && <li>
-          <NavLink
-            className="hover:text-[#5F8D0A] hover:text-bold"
-            to="/register"
-          >
-            Register
-          </NavLink>
-        </li>
-        }
+        {!user && (
+          <li>
+            <NavLink
+              className="hover:text-[#5F8D0A] hover:text-bold"
+              to="/register"
+            >
+              Register
+            </NavLink>
+          </li>
+        )}
+         {user && (
+               <li>
+            <NavLink
+              className="hover:text-[#5F8D0A] hover:text-bold"
+              to="/user"
+            >
+              <img title={user?.displayName} className="w-10 h-10 rounded-full" src={user?.photoURL} alt="Profile Picture" />
+            </NavLink>
+            </li>
+          )}
         <li>
           <DarkModeToggle
             onChange={setIsDarkMode}

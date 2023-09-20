@@ -3,10 +3,13 @@ export const userContext = createContext();
 
 import app from "../firebase/firebase.config";
 import {
+  createUserWithEmailAndPassword,
   FacebookAuthProvider,
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
@@ -22,7 +25,10 @@ const UserContext = ({ children }) => {
 
   //signIn Methods
   const signInUserWithGoogle = () => signInWithPopup(auth, googleProvider);
-  const signInUserWithFacebook = ()=> signInWithPopup(auth, facebookProvider)
+  const signInUserWithFacebook = ()=> signInWithPopup(auth, facebookProvider);
+  const registerWithEmailPassword = (email, password)=> createUserWithEmailAndPassword(auth, email, password);
+  const loginUserWithEmailPassword = (email, password)=> signInWithEmailAndPassword(auth, email, password);
+  const sendResetPasswordEmail = (email) => sendPasswordResetEmail(auth, email)
   const signOutUser = ()=>signOut(auth);
 
   const userInfo = {
@@ -30,6 +36,9 @@ const UserContext = ({ children }) => {
     loading,
     signInUserWithGoogle,
     signInUserWithFacebook,
+    registerWithEmailPassword,
+    loginUserWithEmailPassword,
+    sendResetPasswordEmail,
     signOutUser
   };
 
