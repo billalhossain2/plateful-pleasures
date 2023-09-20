@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCC9nSkz51LTSx8kz-z6qFJ5sOG77RdvG0",
-  authDomain: "plateful-pleasures.firebaseapp.com",
-  projectId: "plateful-pleasures",
-  storageBucket: "plateful-pleasures.appspot.com",
-  messagingSenderId: "239472639308",
-  appId: "1:239472639308:web:5873e9323d4e21139723e9"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
