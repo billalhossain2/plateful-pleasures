@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
 import useTitle from "../Hooks/useTitle";
@@ -7,8 +7,7 @@ import Modal from "../Modal/Modal";
 
 const User = () => {
     useTitle("User")
-    const {user} = useContext(userContext)
-
+    const {user, getStoredProfilePhoto} = useContext(userContext)
     const [isOpen, setIsOpen] = useState(false)
 
     const handleModal = ()=>{
@@ -18,7 +17,7 @@ const User = () => {
   return (
     <>
     <Navbar></Navbar>
-    <Modal isOpen={isOpen} setIsOpen={setIsOpen}></Modal>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen} userName={user?.displayName} photoLink={user?.photoURL}></Modal>
     <div className="container mx-auto py-8">
       <h1 className="text-3xl font-semibold mb-4">User Profile</h1>
       <div className="rounded-lg overflow-hidden shadow-md">
