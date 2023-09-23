@@ -3,7 +3,7 @@
 ## Introduction
 Welcome to the Food Recipes Website! This is a web application that allows users to discover, search for, and share delicious food recipes. It has been built using React, Tailwind CSS, Firebase Authentication, and several other libraries to provide a seamless and user-friendly experience.
 
-#### Live Demo Link:
+#### Live Demo Link: https://plateful-pleasures.firebaseapp.com/
 
 ## Features
 * User Authentication: The website uses Firebase Authentication to allow users to create accounts, log in, and securely manage their profiles.
