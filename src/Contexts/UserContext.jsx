@@ -3,12 +3,6 @@ export const userContext = createContext();
 
 import app from "../firebase/firebase.config";
 
-
-//  Add photo to firestore 
-import { getFirestore } from "firebase/firestore";
-const db = getFirestore(app)
-import { collection, addDoc, getDocs } from "firebase/firestore";
-
 import {
   createUserWithEmailAndPassword,
   FacebookAuthProvider,
@@ -40,10 +34,6 @@ const UserContext = ({ children }) => {
   const signOutUser = ()=>signOut(auth);
   const addExtraUserInfo = (profileInfo)=>updateProfile(auth.currentUser, profileInfo)
 
-  // add photo to firestore 
-  const addPhotoToFirestore = (profileInfo)=>addDoc(collection(db, "photos"), profileInfo)
-  const getStoredProfilePhoto = ()=> getDocs(collection(db, "users"));
-
   const userInfo = {
     user,
     loading,
@@ -53,9 +43,7 @@ const UserContext = ({ children }) => {
     loginUserWithEmailPassword,
     sendResetPasswordEmail,
     signOutUser,
-    addExtraUserInfo,
-    addPhotoToFirestore,
-    getStoredProfilePhoto
+    addExtraUserInfo
   };
 
   useEffect(() => {

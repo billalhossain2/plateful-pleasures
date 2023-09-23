@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { userContext } from "../../Contexts/UserContext";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Modal = ({isOpen, setIsOpen, userName, photoLink}) => {
   const {user, addExtraUserInfo} = useContext(userContext)
   const handleSubmit = (e)=>{
@@ -11,12 +12,16 @@ const Modal = ({isOpen, setIsOpen, userName, photoLink}) => {
     addExtraUserInfo({
       displayName: name, photoURL: photoUrl
     })
-    .then(()=>console.log("User profile updated!"))
+    .then(()=>{
+      console.log("User profile updated!")
+      toast("Profile updated successfully !", {autoClose:1000})
+    })
     .catch((error)=>console.log("Profile update error====> ", error.message))
     setIsOpen(false)
   }
   return (
     <dialog  id="my_modal_1" className="modal" open={isOpen}>
+      <ToastContainer></ToastContainer>
       <div className="modal-box  border-[1px] border-solid border-[#5F8D0A]">
         <h3 className="font-bold text-lg">Update User</h3>
         <div className="my-5">

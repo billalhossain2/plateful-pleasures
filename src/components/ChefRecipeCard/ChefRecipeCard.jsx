@@ -43,7 +43,6 @@ const ChefRecipeCard = ({recipe, chefName}) => {
     <button disabled={isDisable} onClick={()=>handleDisable(recipe)} className={`bg-[#5F8D0A] hover:bg-[#0a8d2b] duration-500 text-white rounded-md px-3 py-1 mt-4 ${isDisable ? 'bg-[#b0eb42] hover:bg-[#b0eb42]' : ''}`}>
       Favorite
     </button>
-    <ToastContainer></ToastContainer>
   </div>
   )
 }

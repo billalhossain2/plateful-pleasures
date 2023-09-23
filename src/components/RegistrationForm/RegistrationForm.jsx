@@ -5,10 +5,6 @@ import useTitle from "../Hooks/useTitle";
 import Footer from "../shared/Footer";
 import { userContext } from "../../Contexts/UserContext";
 
-import app from "../../firebase/firebase.config";
-import { getFirestore } from "firebase/firestore";
-const db = getFirestore(app)
-import { collection, addDoc } from "firebase/firestore";
 
 function RegistrationForm() {
   useTitle("Registration");
@@ -24,19 +20,14 @@ function RegistrationForm() {
     const password = form.password.value;
     const confirmPassword = form.confirmPassword.value;
     const photoUrl = form.photoUrl.value;
-
-     
-
-
     const agreeToTerms = form.agreeToTerms.checked;
-
 
     setError("");
     setSuccess("");
 
     // Validate password match
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      setError("Passwords do not match");
       return;
     }
 
@@ -63,7 +54,7 @@ function RegistrationForm() {
 
     // Check if the user has agreed to terms and conditions
     if (!agreeToTerms) {
-      alert("Please agree to the terms and conditions");
+      setError("Please agree to terms and condition")
       return;
     }
 
