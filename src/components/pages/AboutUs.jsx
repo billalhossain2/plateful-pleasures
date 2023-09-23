@@ -3,8 +3,10 @@ import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import useTitle from "../Hooks/useTitle";
 
 const AboutUs = () => {
+  useTitle("About Us")
   // Example data
   const founder = {
     name: "John Doe",

@@ -2,7 +2,9 @@ import React from 'react'
 import Navbar from '../shared/Navbar'
 import Footer from '../shared/Footer'
 import { usePDF } from 'react-to-pdf';
+import useTitle from '../Hooks/useTitle';
 const Blogs = () => {
+  useTitle("Blogs")
   const { toPDF, targetRef } = usePDF({filename: 'blog.pdf'});
   return (
     <>

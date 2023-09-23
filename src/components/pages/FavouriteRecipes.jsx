@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../shared/Navbar';
 import Footer from '../shared/Footer';
 import { AiFillDelete } from 'react-icons/ai';
+import useTitle from '../Hooks/useTitle';
 const FavouriteRecipes = () => {
+    useTitle("Favourites")
     const [favourites, setFavourites] = useState([])
     useEffect(()=>{
     const storedFavouriteRecipes = localStorage.getItem("favouritRecipes");
